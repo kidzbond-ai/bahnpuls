@@ -1,0 +1,44 @@
+name: Archive rail data
+
+on:
+  schedule:
+    # Woechentlich montags 06:00 UTC. Die Laeufe sind idempotent; haeufiges
+    # Ausfuehren kostet nichts, ein verpasster DB-Monat ist dagegen endgueltig weg.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      # Die Schritte laufen bewusst unabhaengig voneinander: faellt eine Quelle
+      # aus, sollen die Daten der anderen trotzdem gesichert werden.
+      - name: DB punctuality
+        run: python scrape_db_punctuality.py
+
+      - name: Eurostat
+        if: always()
+        run: python fetch_eurostat.py
+
+      # Committet auch dann, wenn oben etwas fehlschlug. Der Lauf bleibt rot,
+      # die bereits geholten Daten gehen aber nicht verloren.
+      - name: Commit new data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet && echo "Keine Aenderungen" && exit 0
+          git commit -m "data: Aktualisierung $(date -u +%Y-%m-%d)"
+          git push

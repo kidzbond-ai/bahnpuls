@@ -1,0 +1,405 @@
+<title>Welche Bahndaten sind offen?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground:    #f7f8f9;
+  --surface:   #ffffff;
+  --ink:       #101418;
+  --ink-soft:  #4a5560;
+  --ink-faint: #7b8794;
+  --rule:      #dde2e7;
+  --accent:    #2a78d6;
+  --signal:    #eb6834;
+  --ok:        #1baf7a;
+  --measure:   66ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:    #14171a;
+    --surface:   #1c2126;
+    --ink:       #eef1f4;
+    --ink-soft:  #a9b4bf;
+    --ink-faint: #78838e;
+    --rule:      #2b333b;
+    --accent:    #5c9ae8;
+    --signal:    #f07a4a;
+    --ok:        #33c48d;
+  }
+}
+:root[data-theme="dark"] {
+  --ground:    #14171a;
+  --surface:   #1c2126;
+  --ink:       #eef1f4;
+  --ink-soft:  #a9b4bf;
+  --ink-faint: #78838e;
+  --rule:      #2b333b;
+  --accent:    #5c9ae8;
+  --signal:    #f07a4a;
+  --ok:        #33c48d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+}
+
+.wrap { max-width: 64rem; margin: 0 auto; }
+.col  { max-width: var(--measure); }
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .7rem;
+  padding: 2.5rem 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .74rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.masthead b { color: var(--accent); font-weight: 500; }
+
+h1 {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  margin: 2.4rem 0 1rem;
+}
+
+.standfirst { font-size: 1.18rem; color: var(--ink-soft); margin: 0 0 2rem; }
+
+h2 {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 3.2rem 0 .9rem;
+}
+
+h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 .4rem; }
+p  { margin: 0 0 1.1rem; }
+a  { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+ul { margin: 0 0 1.1rem; padding-left: 1.2rem; }
+li { margin-bottom: .4rem; }
+
+.eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 .3rem;
+}
+
+.disclaimer {
+  border: 1px solid var(--signal);
+  border-left-width: 3px;
+  border-radius: 3px;
+  background: var(--surface);
+  padding: 1.4rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+  max-width: var(--measure);
+}
+.disclaimer .eyebrow { color: var(--signal); }
+.disclaimer p:last-child { margin-bottom: 0; }
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.8rem 0;
+  max-width: var(--measure);
+}
+.note p:last-child { margin-bottom: 0; }
+
+.scroll { overflow-x: auto; margin: 1.5rem 0 2rem; }
+table { border-collapse: collapse; font-size: .88rem; width: 100%; }
+th, td {
+  text-align: left;
+  padding: .5rem .7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+thead th {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  white-space: nowrap;
+}
+td.src { font-weight: 500; white-space: nowrap; }
+td.num, th.num { text-align: right; }
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tag {
+  display: inline-block;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .12rem .45rem;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.tag-open  { color: var(--ok); }
+.tag-key   { color: var(--accent); }
+.tag-limit { color: var(--signal); }
+
+figure { margin: 2.4rem 0; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+figcaption {
+  font-size: .88rem;
+  color: var(--ink-faint);
+  margin-top: .7rem;
+  max-width: var(--measure);
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-faint);
+  max-width: var(--measure);
+}
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <b>bahnpuls</b>
+    <span>Studienprojekt · Datenanalyse</span>
+  </div>
+
+  <div class="col">
+    <p class="eyebrow">Prüfstand @CHECKED@</p>
+    <h1>Welche Bahndaten sind offen?</h1>
+    <p class="standfirst">Eine Bestandsaufnahme der offenen Datenquellen zum
+    Schienenverkehr in Deutschland und Europa — welche Schnittstellen tatsächlich
+    antworten, was sie liefern und wo die Lücken liegen. Mit einer Beispielauswertung.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p class="eyebrow">Ohne Gewähr</p>
+    <p>Dies ist eine studentische Arbeit, keine amtliche Statistik und keine
+    Fachpublikation. Für Richtigkeit, Vollständigkeit und Aktualität der Angaben
+    wird <strong>keine Gewähr übernommen</strong>. Die Werte wurden aus öffentlich
+    zugänglichen Quellen übernommen; Übertragungs-, Auswertungs- und Interpretationsfehler
+    sind nicht auszuschließen.</p>
+    <p>Alle Angaben zur Verfügbarkeit von Schnittstellen beziehen sich auf den
+    Prüfzeitpunkt @CHECKED@ und können sich jederzeit ändern. Für verbindliche
+    Aussagen sind die Originalquellen heranzuziehen. bahnpuls ist ein unabhängiges
+    Projekt und steht in keiner Verbindung zur Deutschen Bahn AG, zu Eurostat oder
+    zum Statistischen Bundesamt.</p>
+  </div>
+
+  <div class="col">
+    <h2>Die Quellen im Überblick</h2>
+    <p>Geprüft wurde, ob die Schnittstelle antwortet, ob eine Registrierung nötig ist
+    und welchen Zeitraum die Daten abdecken. Jede Zeile beruht auf einem tatsächlich
+    ausgeführten Abruf, nicht auf Dokumentation.</p>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Quelle</th>
+          <th>Was sie liefert</th>
+          <th>Zugang</th>
+          <th>Zeitraum</th>
+          <th>Befund</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="src">Eurostat</td>
+          <td>Verkehrsleistung, Infrastruktur, Unfälle, EU-weit</td>
+          <td><span class="tag tag-open">frei</span></td>
+          <td class="mono">ab 1962</td>
+          <td>REST-API im Format JSON-stat 2.0, kein Schlüssel nötig. Ergiebigste Quelle.</td>
+        </tr>
+        <tr>
+          <td class="src">DB Pünktlichkeit</td>
+          <td>Monatliche Pünktlichkeitswerte</td>
+          <td><span class="tag tag-open">frei</span></td>
+          <td class="mono">rollend ~14 Mon.</td>
+          <td>Nur als HTML-Tabelle, kein Download. Ältere Monate werden gelöscht.</td>
+        </tr>
+        <tr>
+          <td class="src">Destatis GENESIS</td>
+          <td>Amtliche Statistik, tiefe Verkehrstabellen</td>
+          <td><span class="tag tag-key">Konto</span></td>
+          <td class="mono">—</td>
+          <td>Alle Aufrufe per POST, Zugangsdaten in den HTTP-Headern. Registrierung kostenlos.</td>
+        </tr>
+        <tr>
+          <td class="src">OpenStreetMap</td>
+          <td>Strecken, Bahnhöfe, Kennungen, Koordinaten</td>
+          <td><span class="tag tag-open">frei</span></td>
+          <td class="mono">laufend</td>
+          <td>Abruf über Overpass. Bahnhöfe tragen <span class="mono">uic_ref</span> und DS100 — anschlussfähig an DB-Kennungen.</td>
+        </tr>
+        <tr>
+          <td class="src">OpenRailwayMap</td>
+          <td>Kartendarstellung</td>
+          <td><span class="tag tag-limit">keine Daten</span></td>
+          <td class="mono">—</td>
+          <td>Eigene Datenhaltung gibt es nicht; die Seite rendert OpenStreetMap.</td>
+        </tr>
+        <tr>
+          <td class="src">DB API Marketplace</td>
+          <td>Fahrplan, Bahnhöfe, Aufzüge (Soll/Ist)</td>
+          <td><span class="tag tag-key">Konto</span></td>
+          <td class="mono">live</td>
+          <td>Einzige geprüfte Quelle mit echten Verspätungsminuten je Halt.</td>
+        </tr>
+        <tr>
+          <td class="src">GovData</td>
+          <td>Metadatenkatalog des Bundes</td>
+          <td><span class="tag tag-open">frei</span></td>
+          <td class="mono">—</td>
+          <td>CKAN-API funktioniert, 151 Treffer zu „Eisenbahn“ — überwiegend Geodaten, wenig Statistik.</td>
+        </tr>
+        <tr>
+          <td class="src">Mobilithek</td>
+          <td>Mobilitätsdaten, Nachfolger des DB-Portals</td>
+          <td><span class="tag tag-key">Konto</span></td>
+          <td class="mono">—</td>
+          <td>Startseite liefert nur eine Programmhülle; Daten laufen über die angemeldete Schnittstelle.</td>
+        </tr>
+        <tr>
+          <td class="src">SMARD</td>
+          <td>Strommarkt, Bundesnetzagentur</td>
+          <td><span class="tag tag-open">frei</span></td>
+          <td class="mono">laufend</td>
+          <td>Offenes JSON. Für Bahnstrom nur mittelbar einschlägig.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col">
+    <h2>Drei Befunde, die man der Dokumentation nicht ansieht</h2>
+
+    <h3>Eingestellte Reihen sehen aus wie lebende</h3>
+    <p>Eurostat liefert auch Datensätze weiter aus, die seit Jahren nicht mehr
+    fortgeschrieben werden. <span class="mono">rail_go_typeall</span> endet 2016,
+    <span class="mono">rail_ac_catvict</span> endet 2015 — die Schnittstelle antwortet
+    trotzdem mit Status 200. Wer nur auf den Antwortcode schaut, baut auf toten Reihen auf.</p>
+
+    <h3>Deutschland meldet seine Infrastruktur nicht mehr</h3>
+    <p>In den Infrastrukturdatensätzen endet die deutsche Reihe 2021, bei den Fahrzeugen
+    bereits 2020, während 36 andere Länder bis 2024 liefern. Für aktuelle Aussagen über
+    das deutsche Netz sind diese Datensätze deshalb nicht brauchbar. Verkehrsleistung und
+    Sicherheit reichen dagegen bis 2024 beziehungsweise 2025.</p>
+
+    <h3>Was veröffentlicht wird, verschwindet auch wieder</h3>
+    <p>Die Deutsche Bahn zeigt ihre Pünktlichkeitswerte nur in einem gleitenden Fenster
+    von rund vierzehn Monaten und bietet keinen Download an. Ältere Werte werden ersatzlos
+    entfernt. Eine lange Zeitreihe entsteht nur, wenn jemand laufend mitschreibt.</p>
+  </div>
+
+  <div class="col">
+    <h2>Beispielauswertung: Pünktlichkeit</h2>
+    <p>Um zu zeigen, was sich aus einer solchen Quelle gewinnen lässt, wurden die
+    monatlichen Werte der Deutschen Bahn über @MONTHS@ Monate archiviert und
+    ausgewertet — von @FIRST@ bis @LAST@.</p>
+  </div>
+
+  <figure>
+    <img src="@IMG_HUNDRED@" alt="Punktraster: von 100 Fernverkehrszügen kommen @LATE_FV@ sechs Minuten oder später an, im Nahverkehr sind es deutlich weniger.">
+    <figcaption>Betriebliche Pünktlichkeit im @LAST@. Ein Punkt entspricht einem Zug von hundert.</figcaption>
+  </figure>
+
+  <div class="col">
+    <p>Im Fernverkehr erreichen @FV_BETR@&thinsp;Prozent der Züge ihr Ziel mit weniger
+    als sechs Minuten Verspätung, im Nahverkehr @NV_BETR@. Der Abstand von gut
+    30 Prozentpunkten hält sich über alle archivierten Monate.</p>
+  </div>
+
+  <figure>
+    <img src="@IMG_REIHE@" alt="Liniendiagramm der monatlichen Pünktlichkeitswerte über @MONTHS@ Monate.">
+    <figcaption>Die beiden Kennzahlen des Fernverkehrs sind nicht unmittelbar
+    vergleichbar: Züge werden mit einer Schwelle von sechs Minuten gemessen,
+    Reisende mit fünfzehn.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3>Eine methodische Falle</h3>
+    <p>Die beiden Fernverkehrskennzahlen laden zum direkten Vergleich ein, tragen aber
+    unterschiedliche Definitionen: Die betriebliche Pünktlichkeit erlaubt 5:59&thinsp;Minuten
+    je Verkehrshalt, die Reisendenpünktlichkeit 14:59&thinsp;Minuten für den Fahrgast am
+    Zielbahnhof, unter Berücksichtigung von Anschlüssen, Ausfällen und Ersatzzügen.
+    Der Abstand beider Werte misst also zunächst den Unterschied der Schwellen, nicht
+    die Bevorzugung bestimmter Züge.</p>
+    <p>Aussagekräftig ist daher nicht der Abstand selbst, sondern seine Veränderung:
+    Er ging von @SCHERE_MAX@ Punkten im @SCHERE_MAX_MONTH@ auf @SCHERE_NOW@ Punkte
+    im @LAST@ zurück.</p>
+  </div>
+
+  <div class="col">
+    <h2>Grenzen dieser Auswertung</h2>
+    <div class="note">
+      <p><strong>Kein Trend.</strong> @MONTHS@ Monate reichen für Aussagen über
+      mehrjährige Entwicklungen nicht aus.</p>
+      <p><strong>Keine Minuten.</strong> Veröffentlicht wird nur der Anteil unterhalb
+      einer Schwelle. Sieben Minuten und zwei Stunden Verspätung sind darin nicht
+      zu unterscheiden.</p>
+      <p><strong>Keine Geografie.</strong> Die Werte gelten bundesweit; Aussagen über
+      einzelne Strecken oder Bahnhöfe lassen sich nicht ableiten.</p>
+      <p><strong>Fremde Definitionshoheit.</strong> Ändert die Deutsche Bahn ihre
+      Methodik, bricht die Reihe, ohne dass die Daten es ausweisen.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <h2>Vorgehen</h2>
+    <p>Die Verfügbarkeit jeder Schnittstelle wurde durch einen eigenen Abruf geprüft und
+    der Antwortcode festgehalten. Die Pünktlichkeitswerte werden wöchentlich automatisch
+    von der Konzernseite der Deutschen Bahn gelesen und in einer wachsenden Datei
+    zusammengeführt; zu jedem Abruf bleibt eine Kopie der Quellseite erhalten, damit
+    spätere Korrekturen nachvollziehbar sind. Die Eurostat-Datensätze werden vollständig
+    neu geladen, sobald Eurostat einen neuen Stand meldet.</p>
+    <p>Die Werte werden unverändert übernommen und nicht nachgerechnet. Auswertung und
+    Grafiken entstehen vollständig aus den archivierten Dateien und lassen sich
+    reproduzieren.</p>
+  </div>
+
+  <footer>
+    <p>Studienprojekt im Rahmen einer Weiterbildung in Datenanalyse. Ohne Gewähr —
+    siehe Hinweis am Seitenanfang. Datengrundlagen: Deutsche Bahn AG, Eurostat,
+    OpenStreetMap-Mitwirkende. Prüfstand @CHECKED@.</p>
+  </footer>
+
+</div>

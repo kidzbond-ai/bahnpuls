@@ -1,0 +1,307 @@
+<title>Das Pünktlichkeitsarchiv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground:    #f7f8f9;
+  --surface:   #ffffff;
+  --ink:       #101418;
+  --ink-soft:  #4a5560;
+  --ink-faint: #7b8794;
+  --rule:      #dde2e7;
+  --accent:    #2a78d6;
+  --signal:    #eb6834;
+  --measure:   66ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:    #14171a;
+    --surface:   #1c2126;
+    --ink:       #eef1f4;
+    --ink-soft:  #a9b4bf;
+    --ink-faint: #78838e;
+    --rule:      #2b333b;
+    --accent:    #5c9ae8;
+    --signal:    #f07a4a;
+  }
+}
+:root[data-theme="dark"] {
+  --ground:    #14171a;
+  --surface:   #1c2126;
+  --ink:       #eef1f4;
+  --ink-soft:  #a9b4bf;
+  --ink-faint: #78838e;
+  --rule:      #2b333b;
+  --accent:    #5c9ae8;
+  --signal:    #f07a4a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+}
+
+.wrap { max-width: 62rem; margin: 0 auto; }
+.col  { max-width: var(--measure); }
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .7rem;
+  padding: 2.5rem 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .74rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.masthead b { color: var(--accent); font-weight: 500; }
+
+h1 {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  margin: 2.4rem 0 1rem;
+}
+
+.standfirst {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin: 0 0 2.4rem;
+}
+
+h2 {
+  font-family: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 3.4rem 0 .9rem;
+}
+
+h3 { font-size: 1.05rem; font-weight: 600; margin: 2rem 0 .4rem; }
+p  { margin: 0 0 1.1rem; }
+a  { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 .3rem;
+}
+
+.figures { display: grid; gap: 1.4rem; margin: 2rem 0 1rem; }
+@media (min-width: 44rem) { .figures { grid-template-columns: repeat(3, 1fr); } }
+
+.stat { border-left: 2px solid var(--signal); padding: .1rem 0 .1rem 1rem; }
+.stat .n {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+.stat .l { font-size: .95rem; color: var(--ink-soft); }
+
+figure { margin: 2.6rem 0; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+figcaption {
+  font-size: .88rem;
+  color: var(--ink-faint);
+  margin-top: .7rem;
+  max-width: var(--measure);
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.8rem 0;
+}
+.note p:last-child { margin-bottom: 0; }
+
+.scroll { overflow-x: auto; margin: 1.5rem 0; }
+table { border-collapse: collapse; font-size: .9rem; width: 100%; }
+th, td {
+  text-align: right;
+  padding: .45rem .7rem;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+th:first-child, td:first-child { text-align: left; }
+td {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+thead th {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+  color: var(--ink-faint);
+  max-width: var(--measure);
+}
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <b>bahnpuls</b>
+    <span>Unabhängige Auswertung offener Daten</span>
+  </div>
+
+  <div class="col">
+    <p class="eyebrow">Stand @LAST@</p>
+    <h1>Im Fernverkehr kommt fast jeder zweite Zug zu spät</h1>
+    <p class="standfirst">Die Deutsche Bahn veröffentlicht ihre Pünktlichkeitswerte
+    monatlich — und löscht sie wieder. Wir archivieren sie seit @FIRST@.
+    Was das Archiv zeigt.</p>
+  </div>
+
+  <div class="figures">
+    <div class="stat">
+      <span class="n">@LATE_FV@</span>
+      <span class="l">von 100 Fernverkehrszügen kommen sechs Minuten oder später an</span>
+    </div>
+    <div class="stat">
+      <span class="n">@WORST_VAL@&thinsp;%</span>
+      <span class="l">Reisendenpünktlichkeit im @WORST@ — schlechtester Wert des Archivs</span>
+    </div>
+    <div class="stat">
+      <span class="n">@SCHERE_NOW@</span>
+      <span class="l">Punkte bringt die weichere 15-Minuten-Schwelle noch, statt @SCHERE_MAX@ im @SCHERE_MAX_MONTH@</span>
+    </div>
+  </div>
+
+  <figure>
+    <img src="@IMG_HUNDRED@" alt="Punktraster: von 100 Fernverkehrszügen kommen @LATE_FV@ sechs Minuten oder später an, im Nahverkehr sind es deutlich weniger.">
+    <figcaption>Betriebliche Pünktlichkeit im @LAST@. Ein Punkt entspricht einem Zug von hundert.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h2>Zwei Eisenbahnen unter einer Marke</h2>
+    <p>Der Nahverkehr liegt bei @NV_BETR@&thinsp;Prozent, der Fernverkehr bei
+    @FV_BETR@. Der Abstand beträgt im Mittel gut 30 Prozentpunkte, und er ist kein
+    Ausreißer: Er hält sich über alle @MONTHS@ archivierten Monate. Auch die
+    Schwankung unterscheidet sich deutlich — der Fernverkehr streut rund dreimal so
+    stark wie der Nahverkehr.</p>
+  </div>
+
+  <figure>
+    <img src="@IMG_REIHE@" alt="Liniendiagramm der monatlichen Pünktlichkeitswerte über @MONTHS@ Monate.">
+    <figcaption>Achtung beim Vergleich: Züge werden mit einer Schwelle von sechs Minuten
+    gemessen, Reisende mit fünfzehn. Die Reihen sind deshalb nicht unmittelbar
+    gegeneinander lesbar.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h2>Die weichere Schwelle hilft kaum noch</h2>
+    <p>Die Reisendenpünktlichkeit misst den Fahrgast am gebuchten Zielbahnhof und
+    erlaubt ihm 14:59&thinsp;Minuten Verspätung — mehr als das Doppelte der sechs
+    Minuten, mit denen einzelne Züge bewertet werden. Entsprechend sollte sie
+    deutlich höher liegen als die betriebliche Pünktlichkeit.</p>
+    <p>Sie tut es immer weniger. Im @SCHERE_MAX_MONTH@ betrug der Vorsprung noch
+    @SCHERE_MAX@ Punkte, zuletzt waren es @SCHERE_NOW@. Verpasste Anschlüsse,
+    Ausfälle und Ersatzzüge zehren den Vorteil der großzügigeren Schwelle fast
+    vollständig auf.</p>
+  </div>
+
+  <figure>
+    <img src="@IMG_SCHERE@" alt="Balkendiagramm: Abstand zwischen Reisenden- und Betriebspünktlichkeit je Monat.">
+    <figcaption>Differenz beider Kennzahlen in Prozentpunkten. Weil die Schwellenwerte
+    verschieden sind, ist nicht der Abstand selbst aussagekräftig, sondern seine
+    Veränderung über die Zeit.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h2>Was das Archiv nicht hergibt</h2>
+    <div class="note">
+      <p><strong>Kein Trend.</strong> Das Archiv umfasst @MONTHS@ Monate. Für Aussagen
+      über mehrjährige Entwicklungen reicht das nicht — wer hier einen Langfristtrend
+      liest, liest ihn hinein.</p>
+      <p><strong>Keine Minuten.</strong> Veröffentlicht wird nur der Anteil der Züge
+      unterhalb einer Schwelle. Ein Zug mit sieben Minuten Verspätung und einer mit
+      zwei Stunden sind in dieser Statistik nicht zu unterscheiden.</p>
+      <p><strong>Keine Geografie.</strong> Die Werte gelten bundesweit. Aussagen über
+      einzelne Strecken, Bahnhöfe oder Regionen lassen sich daraus nicht ableiten.</p>
+      <p><strong>Definitionshoheit liegt bei der DB.</strong> Ändert sie ihre Methodik,
+      bricht die Reihe an dieser Stelle, ohne dass die Daten es ausweisen.</p>
+    </div>
+    <p>Der Wert des Archivs liegt woanders: Die DB zeigt auf ihrer Seite nur ein
+    gleitendes Fenster von rund vierzehn Monaten und bietet keinen Download an.
+    Ältere Werte verschwinden. Mit jedem Monat wächst hier eine Zeitreihe, die es
+    öffentlich sonst nicht gibt.</p>
+
+    <h2>Alle Werte</h2>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Monat</th>
+          <th>Personenverkehr</th>
+          <th>Nahverkehr</th>
+          <th>Fernverkehr</th>
+          <th>FV Reisende</th>
+          <th>Differenz</th>
+        </tr>
+      </thead>
+      <tbody>
+@TABLE_ROWS@
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col">
+    <h3>Methodik</h3>
+    <p>Quelle ist die öffentliche Konzernseite der Deutschen Bahn. Die Werte werden
+    unverändert übernommen und nicht nachgerechnet. Betriebliche Pünktlichkeit:
+    Ankunft mit höchstens 5:59&thinsp;Minuten Verspätung, gemessen je Verkehrshalt.
+    Reisendenpünktlichkeit: Ankunft des Fahrgasts am gebuchten Zielbahnhof mit
+    höchstens 14:59&thinsp;Minuten, unter Berücksichtigung von Anschlüssen, Ausfällen
+    und Ersatzzügen. Zu jedem Abruf wird eine Kopie der Quellseite aufbewahrt;
+    spätere Korrekturen der DB bleiben dadurch nachvollziehbar.</p>
+  </div>
+
+  <footer>
+    <p>bahnpuls ist ein unabhängiges Projekt und steht in keiner Verbindung zur
+    Deutschen Bahn AG. Datengrundlage: Deutsche Bahn AG, eigene Archivierung.
+    Grafiken zur redaktionellen Nutzung frei bei Nennung der Quelle.</p>
+  </footer>
+
+</div>
