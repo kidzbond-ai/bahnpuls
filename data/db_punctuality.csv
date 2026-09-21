@@ -3,55 +3,59 @@ period,metric,value_pct,first_seen,last_seen,source_url
 2025-06,Betriebliche Pünktlichkeit Nahverkehr,88.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
 2025-06,Betriebliche Pünktlichkeit Personenverkehr,88.0,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
 2025-06,Reisendenpünktlichkeit Fernverkehr,62.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-07,Betriebliche Pünktlichkeit Fernverkehr,56.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-07,Betriebliche Pünktlichkeit Nahverkehr,88.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-07,Betriebliche Pünktlichkeit Personenverkehr,87.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-07,Reisendenpünktlichkeit Fernverkehr,59.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-08,Betriebliche Pünktlichkeit Fernverkehr,59.6,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-08,Betriebliche Pünktlichkeit Nahverkehr,89.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-08,Betriebliche Pünktlichkeit Personenverkehr,88.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-08,Reisendenpünktlichkeit Fernverkehr,66.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-09,Betriebliche Pünktlichkeit Fernverkehr,55.3,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-09,Betriebliche Pünktlichkeit Nahverkehr,87.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-09,Betriebliche Pünktlichkeit Personenverkehr,86.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-09,Reisendenpünktlichkeit Fernverkehr,61.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-10,Betriebliche Pünktlichkeit Fernverkehr,51.5,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-10,Betriebliche Pünktlichkeit Nahverkehr,85.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-10,Betriebliche Pünktlichkeit Personenverkehr,84.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-10,Reisendenpünktlichkeit Fernverkehr,57.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-11,Betriebliche Pünktlichkeit Fernverkehr,54.5,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-11,Betriebliche Pünktlichkeit Nahverkehr,85.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-11,Betriebliche Pünktlichkeit Personenverkehr,84.5,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-11,Reisendenpünktlichkeit Fernverkehr,61.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-12,Betriebliche Pünktlichkeit Fernverkehr,61.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-12,Betriebliche Pünktlichkeit Nahverkehr,88.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-12,Betriebliche Pünktlichkeit Personenverkehr,87.8,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2025-12,Reisendenpünktlichkeit Fernverkehr,68.6,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-01,Betriebliche Pünktlichkeit Fernverkehr,52.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-01,Betriebliche Pünktlichkeit Nahverkehr,87.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-01,Betriebliche Pünktlichkeit Personenverkehr,86.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-01,Reisendenpünktlichkeit Fernverkehr,54.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-02,Betriebliche Pünktlichkeit Fernverkehr,59.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-02,Betriebliche Pünktlichkeit Nahverkehr,88.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-02,Betriebliche Pünktlichkeit Personenverkehr,88.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-02,Reisendenpünktlichkeit Fernverkehr,65.3,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-03,Betriebliche Pünktlichkeit Fernverkehr,62.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-03,Betriebliche Pünktlichkeit Nahverkehr,88.8,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-03,Betriebliche Pünktlichkeit Personenverkehr,88.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-03,Reisendenpünktlichkeit Fernverkehr,68.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-04,Betriebliche Pünktlichkeit Fernverkehr,64.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-04,Betriebliche Pünktlichkeit Nahverkehr,89.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-04,Betriebliche Pünktlichkeit Personenverkehr,88.6,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-04,Reisendenpünktlichkeit Fernverkehr,69.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-05,Betriebliche Pünktlichkeit Fernverkehr,61.1,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-05,Betriebliche Pünktlichkeit Nahverkehr,88.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-05,Betriebliche Pünktlichkeit Personenverkehr,88.0,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-05,Reisendenpünktlichkeit Fernverkehr,65.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-06,Betriebliche Pünktlichkeit Fernverkehr,52.6,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-06,Betriebliche Pünktlichkeit Nahverkehr,86.4,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-06,Betriebliche Pünktlichkeit Personenverkehr,85.7,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-06,Reisendenpünktlichkeit Fernverkehr,54.5,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-07,Betriebliche Pünktlichkeit Fernverkehr,52.6,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-07,Betriebliche Pünktlichkeit Nahverkehr,87.9,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-07,Betriebliche Pünktlichkeit Personenverkehr,87.2,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
-2026-07,Reisendenpünktlichkeit Fernverkehr,55.0,2026-08-18,2026-08-18,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-07,Betriebliche Pünktlichkeit Fernverkehr,56.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-07,Betriebliche Pünktlichkeit Nahverkehr,88.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-07,Betriebliche Pünktlichkeit Personenverkehr,87.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-07,Reisendenpünktlichkeit Fernverkehr,59.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-08,Betriebliche Pünktlichkeit Fernverkehr,59.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-08,Betriebliche Pünktlichkeit Nahverkehr,89.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-08,Betriebliche Pünktlichkeit Personenverkehr,88.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-08,Reisendenpünktlichkeit Fernverkehr,66.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-09,Betriebliche Pünktlichkeit Fernverkehr,55.3,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-09,Betriebliche Pünktlichkeit Nahverkehr,87.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-09,Betriebliche Pünktlichkeit Personenverkehr,86.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-09,Reisendenpünktlichkeit Fernverkehr,61.9,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-10,Betriebliche Pünktlichkeit Fernverkehr,51.5,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-10,Betriebliche Pünktlichkeit Nahverkehr,85.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-10,Betriebliche Pünktlichkeit Personenverkehr,84.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-10,Reisendenpünktlichkeit Fernverkehr,57.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-11,Betriebliche Pünktlichkeit Fernverkehr,54.5,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-11,Betriebliche Pünktlichkeit Nahverkehr,85.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-11,Betriebliche Pünktlichkeit Personenverkehr,84.5,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-11,Reisendenpünktlichkeit Fernverkehr,61.9,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-12,Betriebliche Pünktlichkeit Fernverkehr,61.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-12,Betriebliche Pünktlichkeit Nahverkehr,88.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-12,Betriebliche Pünktlichkeit Personenverkehr,87.8,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2025-12,Reisendenpünktlichkeit Fernverkehr,68.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-01,Betriebliche Pünktlichkeit Fernverkehr,52.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-01,Betriebliche Pünktlichkeit Nahverkehr,87.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-01,Betriebliche Pünktlichkeit Personenverkehr,86.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-01,Reisendenpünktlichkeit Fernverkehr,54.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-02,Betriebliche Pünktlichkeit Fernverkehr,59.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-02,Betriebliche Pünktlichkeit Nahverkehr,88.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-02,Betriebliche Pünktlichkeit Personenverkehr,88.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-02,Reisendenpünktlichkeit Fernverkehr,65.3,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-03,Betriebliche Pünktlichkeit Fernverkehr,62.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-03,Betriebliche Pünktlichkeit Nahverkehr,88.8,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-03,Betriebliche Pünktlichkeit Personenverkehr,88.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-03,Reisendenpünktlichkeit Fernverkehr,68.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-04,Betriebliche Pünktlichkeit Fernverkehr,64.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-04,Betriebliche Pünktlichkeit Nahverkehr,89.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-04,Betriebliche Pünktlichkeit Personenverkehr,88.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-04,Reisendenpünktlichkeit Fernverkehr,69.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-05,Betriebliche Pünktlichkeit Fernverkehr,61.1,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-05,Betriebliche Pünktlichkeit Nahverkehr,88.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-05,Betriebliche Pünktlichkeit Personenverkehr,88.0,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-05,Reisendenpünktlichkeit Fernverkehr,65.9,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-06,Betriebliche Pünktlichkeit Fernverkehr,52.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-06,Betriebliche Pünktlichkeit Nahverkehr,86.4,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-06,Betriebliche Pünktlichkeit Personenverkehr,85.7,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-06,Reisendenpünktlichkeit Fernverkehr,54.5,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-07,Betriebliche Pünktlichkeit Fernverkehr,52.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-07,Betriebliche Pünktlichkeit Nahverkehr,87.9,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-07,Betriebliche Pünktlichkeit Personenverkehr,87.2,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-07,Reisendenpünktlichkeit Fernverkehr,54.6,2026-08-18,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-08,Betriebliche Pünktlichkeit Fernverkehr,54.2,2026-09-21,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-08,Betriebliche Pünktlichkeit Nahverkehr,88.5,2026-09-21,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-08,Betriebliche Pünktlichkeit Personenverkehr,87.8,2026-09-21,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
+2026-08,Reisendenpünktlichkeit Fernverkehr,56.6,2026-09-21,2026-09-21,https://www.deutschebahn.com/de/konzern/konzernprofil/zahlen_fakten/puenktlichkeitswerte-6878476
